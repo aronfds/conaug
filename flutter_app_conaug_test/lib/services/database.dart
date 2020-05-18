@@ -22,7 +22,7 @@ class DatabaseService{
 
 
   //brew list from the snapshot
-  List<UserData>  _brewListFromSnapshot (QuerySnapshot snapshot) {
+  List<UserData>  _userListFromSnapshot (QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
       return UserData(
           FirstName: doc.data['FirstName'] ?? '',
@@ -36,7 +36,7 @@ class DatabaseService{
   //get brew stream
   Stream <List<UserData>>  get  Users
   {
-    return Collection.snapshots().map(_brewListFromSnapshot);
+    return Collection.snapshots().map(_userListFromSnapshot);
   }
 
   //user data from snapshot
