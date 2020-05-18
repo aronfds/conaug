@@ -25,8 +25,22 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Colors.brown[400],
-        title: Text('Register Here')
-        ),
+        title: Text('Register Here'),
+          actions: <Widget>[
+        FlatButton.icon(
+        icon: Icon(Icons.person_outline,),
+        label: Text('users',
+          style: TextStyle(
+            color: Colors.white,
+          ),),
+        onPressed: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Display()));
+        }
+        
+        )
+    ]),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
